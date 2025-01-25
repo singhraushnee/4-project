@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #number{
+            width: 160px;
+            height: 30px;
+            font-size: 18px;
+            text-align: center;
+            margin-left: 200px;
+        }
+        #genotp{
+            width: 100px;
+            height: 35px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: rgb(212, 170, 155);
+            color: black;
+        }
+        #gen-otp:hover{
+            background-color: rgb(68, 129, 110);
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="number" placeholder="Enter Number">
+    <button id="genotp">OTP</button>
+    <div id="otp"></div>
+    <script>
+
+    let og=document.getElementById('number')
+    let gob=document.getElementById('genotp')
+    
+    let ot=document.getElementById('otp')
+
+        gob.addEventListener('click',()=>{
+            let number=og.value
+            if(number.length===10){
+                let otp=genotp()
+                ot.innerHTML=`your otp is:${otp}`
+            }
+            else{
+                alert('please enter a valid 10 digit number')
+
+            }
+        })
+        function genotp(){
+            let otplength =6
+            let otp = Math.floor(10000+Math.random()* 800000)
+            return otp.toString().padStart(otplength,'0')
+        }
+        
+
+    </script>
+</body>
+</html>

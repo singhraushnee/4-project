@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #con{
+            width: 350px;
+            height: 80px;
+            border: inset;
+            display: flex;
+            justify-content: center;
+            background-color: lightblue;
+            margin-left: 50px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        input{
+            height: 30px;
+            width: 150px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: red;
+            margin-top: 20px;
+        }
+        
+        button{
+            height: 35px;
+            width: 90px;
+            margin-left: 10px;
+            border-radius: 5px;
+            background-color: lightgreen;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <input type="text" name="otpbox" id="otpbox">
+        <button id="otpgen">OTPGEN</button>
+    </div>
+    <script>
+        let btn=document.getElementById('otpgen')
+        let ib=document.getElementById('otpbox')
+
+        function genotp()
+        {
+            let r=""
+            for(let c=1;c<=4;c++)
+        {
+            r=r+(Math.floor(Math.random()*10))
+        }
+        ib.value=r
+        }
+        btn. addEventListener('click',genotp)
+        
+    </script>
+</body>
+</html>
